@@ -2,14 +2,14 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Categories } from '@modules/product/components/productCategoryTabs';
 import { RootState } from '@core/containers';
-
+const apiHost = `${window.location.protocol}//${window.location.host}`;
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async (category: Categories, thunkAPI) => {
-
     try {
       const resposnse = await axios.get(
-        `${process.env.REACT_APP_API_URL}/${category}`,
+        // `${process.env.REACT_APP_API_URL}/${category}`,
+        `${apiHost}/.netlify/functions/getDataByCategory?category=${category}`,
       );
       console.log(resposnse);
 
