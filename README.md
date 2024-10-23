@@ -1,6 +1,6 @@
 # shopMaterial
 Run - npm start
 
-Build https://materialshop.netlify.app/
+deploy https://materialshop.netlify.app/
 
 
